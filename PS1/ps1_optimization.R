@@ -1,6 +1,6 @@
 ################# ECON 714 #########################
 ############### PROBLEM SET 1 ######################
-#############OPTIMIZATION CODE #####################
+############# OPTIMIZATION CODE ####################
 ############# Sergey Sarkisyan #####################
 ####################################################
 
@@ -106,8 +106,8 @@ vect0 <- c(1.2, 0.8)
 err <- 1
 d <- c(1, 1)
 t0 <- 1
+d0 <- -gradientfunc(vect0[1],vect0[2])
 while(err > tolerr & norm(t0*d %*% t(d)) > tolerr){
-  d0 <- -gradientfunc(vect0[1],vect0[2])
   linfun <- function(t){
     opt <- optfunc(vect0[1] + t*d[1], vect0[2] + t*d[2])
     return(opt)
