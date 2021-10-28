@@ -21,7 +21,7 @@ focagent <- function(lambda, price, m, n, oomega, aalpha, endowment){ #lambda is
 }
 
 ## Assign parameters
-aalpha3 <- c(1, 1, 1.1) #goods, constant across agents
+aalpha3 <- c(0.2, 0.15, 0.1) #goods, constant across agents
 oomega3 <- matrix(c(0.5, 0.6, 0.3, 
                       0.4, 0.3, 0.5,
                       0.9, 0.2, 0.7), 3, 3) #columns are agents, rows are goods
@@ -54,8 +54,8 @@ opts <- list( "algorithm" = "NLOPT_GN_ISRES",
               "print_level" = 0 ) #use ISRES method for global optima
 res <- nloptr( x0 = c(l0, p0),
                eval_f = function(x) sum(aggrdem(x)),
-               lb = rep(0,6),
-               ub = rep(1000,6),
+               lb = rep(0.01,6),
+               ub = rep(1000,6),,
                opts = opts)
 
 print(res)
