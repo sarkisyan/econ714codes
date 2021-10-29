@@ -44,6 +44,9 @@ aggrdem <- function(x){
 }
 
 ## Find roots by minimizing sum of squares
+tic.clearlog()
+tic()
+
 p0 <- rep(1, 3) #initial value for price
 l0 <- rep(1, 3) #initial value for lambda
 local_opts <- list( "algorithm" = "NLOPT_LD_MMA", "xtol_rel" = 1.0e-15 ) #use method of moving asymptotes for local optima
@@ -62,5 +65,5 @@ print(res)
 
 
 ss <- multiroot(f = aggrdem, start = c(l0,p0))
-
+toc(log = TRUE)
 
