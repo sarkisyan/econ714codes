@@ -60,7 +60,7 @@ res <- nloptr( x0 = x0,
                eval_f = function(x) -socialplanner(matrix(x, 3, 3),3,3,llambda3eq,oomega3eq,aalpha3eq,endowment3),
                lb = rep(0,9),
                ub = rep(5,9),
-               eval_g_eq = function(x) sum(x) - 1,
+               eval_g_eq = function(x) sum(x) - sum(endowment3),
                opts = opts)
 
 print(res)
@@ -94,7 +94,7 @@ res <- nloptr( x0 = x0,
                eval_f = function(x) -socialplanner(matrix(x, 3, 3),3,3,llambda3ineq,oomega3ineq,aalpha3ineq,endowment3),
                lb = rep(0,9),
                ub = rep(5,9),
-               eval_g_eq = function(x) sum(x) - 1,
+               eval_g_eq = function(x) sum(x) - sum(endowment3),
                opts = opts)
 
 print(res)
@@ -132,7 +132,7 @@ res <- nloptr( x0 = x0,
                eval_f = function(x) -socialplanner(matrix(x, 10, 10),10,10,llambda10eq,oomega10eq,aalpha10eq,endowment10),
                lb = rep(0,100),
                ub = rep(5,100),
-               eval_g_eq = function(x) sum(x) - 1,
+               eval_g_eq = function(x) sum(x) - sum(endowment10),
                opts = opts)
 
 print(res)

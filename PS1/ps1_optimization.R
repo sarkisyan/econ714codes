@@ -109,18 +109,18 @@ t0 <- 1
 d0 <- -gradientfunc(vect0[1],vect0[2])
 while(err > tolerr & norm(t0*d %*% t(d)) > tolerr){
   linfun <- function(t){
-    opt <- optfunc(vect0[1] + t*d[1], vect0[2] + t*d[2])
+    opt <- optfunc(vect0[1] + t*d0[1], vect0[2] + t*d[2])
     return(opt)
   }
   tval <- seq(0.00001, 0.0001, 0.000001)
   t0 <- tval[which(linfun(tval) == min(linfun(tval)))]
-  vect <- vect0 + t0*d
+  vect <- vect0 + t0*d0
   r <- -gradientfunc(vect[1],vect[2])
-  beta <- as.numeric(t(r) %*% r)/as.numeric(t(d) %*% d)
+  beta <- as.numeric(t(r) %*% r)/as.numeric(t(d0) %*% d0)
   d <- r + beta*d0
   err <- abs(optfunc(vect[1],vect[2]) - optfunc(vect0[1],vect0[2]))
   vect0 <- vect
-  d <- d0
+  d0 <- d
 }
 toc(log = TRUE)
 

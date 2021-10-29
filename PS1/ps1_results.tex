@@ -1,0 +1,133 @@
+% !TeX spellcheck = en_US
+\documentclass[11pt,a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[fleqn]{amsmath}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\doublespacing
+\usepackage{tabularx}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage{amssymb}
+%\numberwithin{equation}{section}
+\usepackage{graphicx}
+\usepackage[bottom]{footmisc}
+\usepackage{color}
+\allowdisplaybreaks
+\usepackage{cite}
+%\usepackage{hyperref}
+\usepackage{placeins}
+\usepackage{titling}
+\setlength{\droptitle}{-10em}
+\usepackage{booktabs} 
+\usepackage{authblk}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+%\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=black,bookmarks=true,pdfstartview=FitH]{hyperref}
+\usepackage{natbib}
+\setcitestyle{round, comma, numbers,sort&compress, super}
+\bibliographystyle{chicago}
+\textwidth=16cm
+\oddsidemargin=0pt
+\topmargin = -20pt
+\footskip = 20pt
+\textheight = 700pt
+\textwidth = 450pt
+\title{Problem Set 1}
+\author{Sergey Sarkisyan}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\section*{Problem 1}
+	\noindent The link to the repository is \href{https://github.com/sarkisyan/econ714codes}{here}.
+	
+	\section*{Problem 2}
+	\noindent The code is in the "ps1\_integration.R" file. The following table shows computation time and result of the integration:\\
+	
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Method & Result & Time (sec.) \\
+		\hline
+		Midpoint & -18.20953 & 0.025 \\
+		\hline
+		Trapezoid & -18.20953 & 0.015 \\
+		\hline
+		Simpson & -18.20953 & 0.022 \\
+		\hline
+		Monte Carlo & -17.98814 & 0.003 \\
+		\hline
+	\end{tabular}
+	\\ \\
+	We can see that quadrature methods are more exact but also slower than Monte Carlo. Monte Carlo result also depends on the seed. 
+	
+	\section*{Problem 3}
+	\noindent The code is in the "ps1\_optimization.R" file. The following table shows computation time, optimal $x$ and $y$, and optimal value:\\
+	
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Method & $x$ & $y$ & Time (sec.)   \\
+		\hline
+		Newton-Raphson & 1 & 1 & 0.131 \\
+		\hline
+		BFGS & 1 & 1 & 0.042  \\
+		\hline
+		Steepest descent & 0.956 & 0.913 & 0.032  \\
+		\hline
+		Conjugate gradient & 0.956 & 0.912 & 0.034  \\
+		\hline
+	\end{tabular}
+	\\ \\
+	Steepest descent and conjugate gradient methods are faster but less precise than Newton-Raphson and BFGS. 
+	
+	\section*{Problem 4}
+	\noindent The code is in the "ps1\_pareto.R" file. I first compute Pareto-efficient distribution for homogenous case. Initial values are equal distribution. Parameter values (identical for all agents in this case) can be found in the code. I use NLOPT package. Specifically, I use ISRES method for optimization. I then introduce heterogeneity and do the same thing for 3 agents and 3 goods. Finally, I solve for 10 homogeneous agents and 10 goods. The optimization is subject to the resource constraint. 
+	
+	Results for the homogeneous case are the following:\\
+	
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		$x_1^1$ & $x_2^1$ & $x_3^1$ & $x_1^2$ & $x_2^2$ & $x_3^2$ & $x_1^3$ & $x_2^3$ & $x_3^3$ & Time (sec.) \\
+		\hline
+		1.4035 & 1.3343 & 1.2993& 1.4283 & 1.3426 & 1.2652& 1.4086 & 1.327 & 1.2908 & 5.42 \\
+		\hline
+	\end{tabular}
+	\\ \\
+	As expected, all agents get the same quantities of each good. The sum of goods is equal to the sum of endowments. 
+	
+	Results for the heteregeneous case are the following:\\
+	
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		$x_1^1$ & $x_2^1$ & $x_3^1$ & $x_1^2$ & $x_2^2$ & $x_3^2$ & $x_1^3$ & $x_2^3$ & $x_3^3$ & Time (sec.) \\
+		\hline
+		0.96702& 0.2981 & 0.6235 & 0.2492& 0.2723& 0.0645 & 3.0914 & 4.6004 & 1.9337& 5.37 \\
+		\hline
+	\end{tabular}
+	\\ \\
+	Computation for 10 agents and 10 goods takes 49 seconds. I don't display results here. 
+	
+	\section*{Problem 5}
+	\noindent The code is in the "ps1\_price.R" file. I compute prices by solving the system of 6 equations and 6 unknowns. Unknowns are prices and Lagrande multipliers. Equations are budget constraints and excess demands. I solve equations by minimizing the sum of squares. The prices are 0.010, 0.012, and 0.018. The time is 37 seconds. 
+	
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
