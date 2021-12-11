@@ -40,10 +40,10 @@ VFI_Setup;
 VFI_Fixedgrid;
 
 %%%%%%% Implement VFI with accelerator
-%VFI_Accelerator;
+VFI_Accelerator;
 
 %%%%%%% Implement VFI with multigrid
-%VFI_Multigrid;
+VFI_Multigrid;
 
 
 

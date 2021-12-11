@@ -1,0 +1,128 @@
+Starting preprocessing of the model file ...
+WARNING: you are using a function (max, min, abs, sign) or an operator (<, >, <=, >=, ==, !=) which is unsuitable for a stochastic context; see the reference manual, section about "Expressions", for more details.
+Found 32 equation(s).
+Evaluating expressions...done
+Computing static model derivatives (order 1).
+Computing dynamic model derivatives (order 1).
+Processing outputs ...
+done
+Preprocessing completed.
+
+STEADY-STATE RESULTS:
+
+Y      		 2.52891
+pt     		 0.955219
+N      		 0.975226
+K      		 35.0428
+pi     		 0.00499991
+M      		 0.99
+i      		 0.025
+C      		 1.65284
+y      		 3.17993
+R      		 0.0151514
+W      		 1.38993
+U      		 2.01117
+F      		 2.52891
+log_A  		 0
+Rk     		 0.0151514
+b      		 0.395859
+q      		 0.890542
+dqdb   		 -0.629538
+vz     		 0
+Phi_z  		 0.920311
+f_z    		 0.523356
+zst    		 0.850055
+Pm     		 0.636217
+Rst    		 2.60209e-18
+qf     		 1
+sp     		 0.122912
+Phi    		 0.920311
+spread 		 0.122912
+infl   		 0.00499991
+lev    		 0.251852
+Yst    		 0.8
+OpProf 		 0.0151514
+
+MODEL SUMMARY
+
+  Number of variables:         32
+  Number of stochastic shocks: 2
+  Number of state variables:   9
+  Number of jumpers:           14
+  Number of static variables:  11
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables       eps_A     eps_R
+eps_A        1.000000  0.000000
+eps_R        0.000000  1.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                               log_A             Rst               Y               C               R               i             lev             Phi          spread            infl
+Constant                           0               0        2.528907        1.652838        0.015151        0.025000        0.251852        0.920311        0.122912        0.005000
+K(-1)                              0               0        0.021630        0.016912       -0.000303       -0.000579        0.000054       -0.000269        0.000403       -0.000168
+log_A(-1)                   0.950000               0        4.039592        0.343682        0.024202        0.105469       -0.003148        0.020902       -0.028022        0.019366
+Rst(-1)                            0        0.850000       30.197932      -22.907962        0.180925        1.515460       -0.117928       -0.003757        0.048667       -0.726637
+eps_A                       0.007000               0        0.029765        0.002532        0.000178        0.000777       -0.000023        0.000154       -0.000206        0.000143
+eps_R                              0        0.004000        0.142108       -0.107802        0.000851        0.007132       -0.000555       -0.000018        0.000229       -0.003419
+
+
+THEORETICAL MOMENTS (HP filter, lambda = 1600)
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+log_A          0.0000     0.0091     0.0001
+Rst            0.0000     0.0050     0.0000
+Y              2.5289     0.1808     0.0327
+C              1.6528     0.1372     0.0188
+R              0.0152     0.0012     0.0000
+i              0.0250     0.0090     0.0001
+lev            0.2519     0.0007     0.0000
+Phi            0.9203     0.0003     0.0000
+spread         0.1229     0.0005     0.0000
+infl           0.0050     0.0043     0.0000
+
+
+
+VARIANCE DECOMPOSITION (in percent) (HP filter, lambda = 1600)
+           eps_A   eps_R
+log_A     100.00    0.00
+Rst         0.00  100.00
+Y           4.58   95.42
+C           0.08   99.92
+R           4.25   95.75
+i           1.28   98.72
+lev         0.20   99.80
+Phi        38.05   61.95
+spread     26.26   73.74
+infl        0.20   99.80
+
+
+
+MATRIX OF CORRELATIONS (HP filter, lambda = 1600)
+Variables     log_A     Rst       Y       C       R       i     lev     Phi  spread    infl
+log_A        1.0000 -0.0000  0.2136  0.0230  0.2034  0.1127 -0.0438  0.6083 -0.5036  0.0440
+Rst         -0.0000  1.0000  0.9698 -0.9923  0.9445  0.9916 -0.9961  0.0112  0.4566 -0.9983
+Y            0.2136  0.9698  1.0000 -0.9431  0.9290  0.9783 -0.9665  0.0472  0.4217 -0.9633
+C            0.0230 -0.9923 -0.9431  1.0000 -0.9639 -0.9891  0.9967 -0.0935 -0.3756  0.9869
+R            0.2034  0.9445  0.9290 -0.9639  1.0000  0.9758 -0.9694  0.3391  0.1396 -0.9238
+i            0.1127  0.9916  0.9783 -0.9891  0.9758  1.0000 -0.9975  0.1297  0.3497 -0.9825
+lev         -0.0438 -0.9961 -0.9665  0.9967 -0.9694 -0.9975  1.0000 -0.0981 -0.3771  0.9895
+Phi          0.6083  0.0112  0.0472 -0.0935  0.3391  0.1297 -0.0981  1.0000 -0.8833  0.0466
+spread      -0.5036  0.4566  0.4217 -0.3756  0.1396  0.3497 -0.3771 -0.8833  1.0000 -0.5066
+infl         0.0440 -0.9983 -0.9633  0.9869 -0.9238 -0.9825  0.9895  0.0466 -0.5066  1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION (HP filter, lambda = 1600)
+Order          1       2       3       4       5
+log_A     0.7133  0.4711  0.2711  0.1098 -0.0163
+Rst       0.6621  0.3939  0.1858  0.0291 -0.0844
+Y         0.6729  0.4102  0.2040  0.0464 -0.0696
+C         0.6621  0.3938  0.1857  0.0290 -0.0845
+R         0.6746  0.4128  0.2068  0.0491 -0.0674
+i         0.6616  0.3931  0.1849  0.0283 -0.0851
+lev       0.6611  0.3924  0.1841  0.0275 -0.0858
+Phi       0.8631  0.6992  0.5250  0.3530  0.1919
+spread    0.8434  0.6693  0.4919  0.3214  0.1651
+infl      0.6641  0.3969  0.1892  0.0323 -0.0817
+Total computing time : 0h00m08s
+Note: 1 warning(s) encountered in the preprocessor
