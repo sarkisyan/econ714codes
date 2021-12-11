@@ -12,3 +12,9 @@ Folder "PS2" contains files for the problem set 2:
 
 - Files that start with "VFI" code value function iterations (standard, accelerator, and multigrid) for problems 1-4
 - File "Chebyshev.m" codes Chebyshev polynomials for problem 5 and makes use of multiple other files (described in the header)
+- File "neuralnet.R" codes deep learning for problem 7
+
+Folder "final project" contains files for the replication of Gomes, Jermann, and Schmid (AER 2016)
+
+- Folder "VFI code" codes value function iterations for the firm's problem to obtain the derivative of the price w.r.t. debt
+- Folder "dynare" contains Dynare code to solve the model using perturbations. IRFs are to the TFP and monetary shock (as in the paper)
